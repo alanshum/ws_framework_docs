@@ -1,0 +1,1 @@
+Most of the functions have multiple optional arguments. To reduce the use of array parameter, but to skip some optional arguments in the middle, most of the helpers accepts blank string `''` to keep using default values with the introduction of [`empty_defaults()`](#empty_defaults). 

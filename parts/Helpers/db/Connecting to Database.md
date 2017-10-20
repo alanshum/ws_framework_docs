@@ -1,0 +1,1 @@
+The default set is automatically connected once the library is loaded. All functions manipulate the data is for the **active** set. If you have multiple set and you want to switch the active set, please use `db_set_active( 'set2' )`. To change back to the default set, simply `db_set_active()`.

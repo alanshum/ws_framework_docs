@@ -1,0 +1,28 @@
+`segments( [$n], [$no_result] )`  
+Fetch URI segments based on **application root**.  
+Note: it currently has an alias `segment()`, which is deprecated and will be removed.  
+
+**Parameters**
+
+- [mixed **$n** = FALSE]
+	- The segment item to return. *0* being the first item. 
+	  *FALSE* to return an array of ALL segments.
+- [bool/mixed **$no_result** = FALSE]
+	- What to return if no result.
+	
+**Return Values**
+
+- *FALSE* - when segment is not found;   
+- *Mixed* - when segment is not found and has a custom value for `$no_result`;  
+- *String* - uri segment text;  
+- *Array* - array of uri segments text (when `$n == FALSE` which is default);  
+
+
+**Examples**
+
+All functions call with this url: `http://www.example.com/app/test/hello/arg1/arg2`,  
+while *test* is the application root, *hello* is the handler page (`pages/hello.php`)
+
+```
+
+```

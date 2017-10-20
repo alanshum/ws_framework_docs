@@ -1,0 +1,10 @@
+Settings for [datafile helper](#datafile):
+
+Variable                 | Description
+------------------------ | -----------
+$config['data_path']     | specify the data store directory name; all data files must be in the same directory.
+$dataset['default']      | specify dataset; e.g. `$dataset['set2'] = 'data2.db'`; <br> Note: the default dataset is more convenient to use as all functions in the datafile helper default to use the 'default' dataset.
+$config['upload_dir']    | directory to put "upload"s, relative to application root
+$config['allowed_size']  | Max file size allowed
+$config['allowed_exts']  | Allowed file extensions (array or csv)
+$config['allowed_type']  | Allowed MIME type (array or csv); `''` Blank mean ALLOW ALL.

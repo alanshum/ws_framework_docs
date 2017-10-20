@@ -1,0 +1,1 @@
+Session helper helps in manipulating session in php, as well as adding a "flash data" ability (see "[Flash Data](#flash-data)" section). Instead of helper functions, this is in essence a library for manipulating session. Upon loading the session helper the php session will also be started.

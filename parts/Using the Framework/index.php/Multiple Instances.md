@@ -1,0 +1,1 @@
+You can have multiple instances of index.php in different directories, and share the same system files. In this framework, we assumes that all these instances belong to the same application with minor settings modifications. On the contrary, if you share the same system files across multiple applications, it will be scary if you need to update the core!

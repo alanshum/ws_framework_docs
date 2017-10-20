@@ -1,0 +1,2 @@
+Note: segments() = csegments() + psegments().  
+fsegments() is the superset of segments(). However, fsegments() do not have any portability as it is based on absolute path to the web root, while other "segments" functions rely on relative root to the application.

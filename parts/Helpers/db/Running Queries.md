@@ -1,0 +1,1 @@
+Please use [`db_query()`](#db_query) for a standard SQL query statement. Otherwise, you can also use [`db_select()`](#db_select), [`db_insert()`](#db_insert), [`db_insert_or_update()`](#db_insert_or_update), [`db_update()`](#db_update), [`db_delete()`](#db_delete) for valid queries. Please refer to the API doc of the functions below.

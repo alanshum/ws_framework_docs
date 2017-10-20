@@ -1,0 +1,3 @@
+As this is a self-defined framework, many stuff has been "pre-defined" and have "opinionated values" (or, simply "hard-coded") to make things work in an efficient way. Therefore, please read the following sections on how to use it.
+
+Note: This framework is built with the support to Bootstrap (v3). Support to v4 is not implemented. Some functions (on displaying content) are normally defined with Bootstrap classes.

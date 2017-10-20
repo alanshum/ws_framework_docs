@@ -1,0 +1,1 @@
+Since `die()` is frequently use in conjunction with these functions, you can specify `'die'` as one of the parameters to kill the script. (You can use the constant `DIE` and `die` as well)

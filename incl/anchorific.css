@@ -1,0 +1,83 @@
+
+/* Give more space for last anchor */
+#main::after {
+    content: '';
+    text-align: center;
+    display:block;
+    padding-top: 60vh;
+}
+
+/* Not from Anchorific; But also for anchor positioning so grouped here */
+*[id]:before {
+	display: block;
+	content: " ";
+	margin-top: -30px;
+	height: 30px;
+	visibility: hidden;
+}
+
+
+.anchorific {
+	width: 320px;
+	margin-top: 80px;
+	margin-left: -30px
+}
+
+
+.anchorific ul {
+	list-style-type: none
+}
+
+.anchorific li ul {
+	list-style-type: none;
+	display: none
+}
+
+.anchorific ul li a {
+	display: block;
+	background-color: #f7f7f7;
+	margin-bottom: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align:left;
+	font-size: 90%;
+}
+
+.anchorific li.active > a {
+	border-right: #e54339 2px solid
+}
+
+.anchorific li.active > ul {
+	display: block
+}
+
+.anchor { font-size: 75%; padding-left: 4px;}
+
+.top {
+	display: none;
+	font-weight: normal;
+	font-family: tahoma;
+	width: 70px;
+	height: 70px;
+	color: #3b5998;
+	font-size: 30px;
+	text-decoration: none;
+	position: fixed;
+	right: 5px;
+	bottom: 5px;
+	padding: 0;
+	text-align: center;
+}
+
+@media print {
+	.no_print, .anchorific, h1, .anchor {
+		display:none;
+	}
+	#email_aliases h2 { margin:10px !important; }
+	#email_aliases h3 { margin:0 !important; padding-top: 5px; }
+	#email_aliases table { width: 100%; page-break-inside: avoid;}
+	#email_aliases div {page-break-inside: avoid;}
+	#email_aliases th { display:none; }
+	#email_aliases td { padding: 2px 12px; }
+	#email_aliases td:first-child { width: 150px !important; }
+}

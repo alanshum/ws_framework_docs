@@ -1,0 +1,3 @@
+The Bootstrap Components helper contains various function to make proper html code for elements in Bootstrap style. Since Bootstrap's styles and components have its own pre-defined code structure, this helper simplifies the need of repeating the same codes again.
+
+The list of functions is added when it is used so do not expect a less-used component will have a function here. All functions in this helper return HTML codes to be printed by yourself.

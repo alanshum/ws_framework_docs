@@ -1,0 +1,1 @@
+These functions resembles the basic usage of reCAPTCHA. Please setup the site key and secure key in `settings.php`.

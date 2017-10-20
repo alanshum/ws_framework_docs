@@ -1,0 +1,1 @@
+Please search for "RewriteBase" and change the path based on your application root (i.e. where index.php locates). This is essential otherwise the application will just die except the default page.

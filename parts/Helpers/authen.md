@@ -1,0 +1,1 @@
+The Authentication and Security helper contains functions on this area. However, note that this is not a complete package so you are required to write your own routine with these helpers.

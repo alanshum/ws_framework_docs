@@ -1,0 +1,1 @@
+Krumo is a package to replace of `print_r()` and `var_dump()`. Please read the official site for details:  [http://krumo.sourceforge.net/](http://krumo.sourceforge.net/)

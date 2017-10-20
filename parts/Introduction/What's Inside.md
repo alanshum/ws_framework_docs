@@ -1,0 +1,5 @@
+- PHP libraries and helpers
+	- mainly procedural functions
+- JavaScript plugins
+- Scss helpers and plugins
+	- including Bootstrap CSS framework Scss files

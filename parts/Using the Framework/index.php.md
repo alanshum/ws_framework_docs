@@ -1,0 +1,1 @@
+The index.php is served as a "base loader" to load the pages. Do not edit if you are not sure what's going on. Put your application pages in `/pages/` directory.  

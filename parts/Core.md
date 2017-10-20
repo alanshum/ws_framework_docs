@@ -1,0 +1,1 @@
+Core is the core library (which in essence also helpers) that the framework will not work without these functions.

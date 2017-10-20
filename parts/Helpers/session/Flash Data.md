@@ -1,0 +1,1 @@
+This framework supports "flash data", which the session data will only be available for the next server request, and are then removed automatically. This can be very useful, especially for one-time informational, error or status messages.

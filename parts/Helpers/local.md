@@ -1,0 +1,1 @@
+The Local helper file is created for your ease to write custom helper functions, especially specific single application. No functions or anything is written here by the framework. This is a just-for-convenience feature. It is fine for you to create new helpers with other names.
