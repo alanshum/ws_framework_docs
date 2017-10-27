@@ -1,6 +1,6 @@
 - Page Title
 	- Use [`set_page_title()`](#set_page_title) to set page title. Useful for pages that you would like an separate page heading. The position is defined in *header.inc.php* with **%PAGE_TITLE%** tag. (i.e., you can use `set_page_title()` anywhere in the page and the title will be set for you)
 - Add select options
-	- Use [`add_options_set()`](#add_options_set) to add new options. See also [options](#7-options) section in bs_form_helper section.
+	- Use [`add_options_set()`](#add_options_set) to add new options. See also [options](#7-options) section in BS Form helper.
 - Add new JavaScript blocks
 	- Use [`addjs()`](#addjs) to add new JavaScript block inline with the program codes in a page. This is required as JavaScript is loaded *AFTER* page content. A `<script></script>` tag will be wrapped for each array item. The scripts are printed in *footer.inc.php* with [`printjs()`](#printjs).

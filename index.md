@@ -1,5 +1,3 @@
-Changelog
-//	Todo
 Introduction
 	Preface
 	What's Inside
@@ -21,6 +19,8 @@ Using the Framework
 		CSV, TSV and Array
 		Defaults
 	File Structure
+	Changelog
+//		Todo
 Config
 	settings.php
 		Auto-load Helpers
@@ -38,12 +38,13 @@ Core
 			fsegments()
 			site_url()
 			current_url()
-		Other Helpers in Core
+	Other Helpers in Core
 			is_php()
 			config_item()
 			log_message()
 			redirect()
 			load_helper()
+			helper_loaded()
 			addjs()
 			printjs()
 			set_page_title()

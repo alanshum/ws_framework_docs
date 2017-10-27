@@ -1,6 +1,12 @@
+.apiindex {
+    column-count: 3;
+}
+.apigroup {
+    break-inside: avoid-column;
+}
 
 /* Give more space for last anchor */
-#main::after {
+#main-content::after {
     content: '';
     text-align: center;
     display:block;
@@ -16,6 +22,8 @@
 	visibility: hidden;
 }
 
+
+/* css from anchorific below */
 
 .anchorific {
 	width: 320px;

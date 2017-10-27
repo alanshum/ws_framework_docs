@@ -1,4 +1,3 @@
-Index of functions
 
 {index}
 

@@ -19,9 +19,9 @@ string	the complete URL
 **Examples**
 
 The url is: http://your_domain.com/example/test/
-"example" is the directory where the application is located.
-"test" is the handler.
+"example" is application root.
+"test" is the handler page.
 ```php
-echo current_url( 'image.png');		// prints: http://your_domain.com/pages/example/test/image.png
-echo current_url();		// prints: http://your_domain.com/pages/example/test
+echo current_url( 'image.png');		// prints: http://your_domain.com/pages/test/image.png
+echo current_url();		// prints: http://your_domain.com/pages/test
 ```

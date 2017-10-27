@@ -3,8 +3,8 @@ Returns default value if input value is empty (check with `empty()`).
 
 --------
 **Parameters**
-name	type	def_value	desc
-value	string		Input value to be checked if it is empty. Note that this is passed by reference. (`&$value`)
+name	type	def_value	desc	by_ref
+value	string		Input value to be checked if it is empty.	TRUE
 default	string		Default value to set to the input variable if it is empty
 
 --------

@@ -1,5 +1,5 @@
 **Description**
-Get the select options set (which was added by [add_options_set()](#add_options_set)). Note: the options set are use by [form_gen_fieldset()](#form_gen_fieldset) automatically and rarely you will need to use this manually.
+Get the select options set (which was added by [add_options_set()](#add_options_set)). Note: the options set are retrieved by [form_gen_fieldset()](#form_gen_fieldset) automatically using this function and rarely you will need to use this manually unless you are writing your own helper functions.
 
 --------
 **Parameters**

@@ -3,8 +3,8 @@ Extract an item from an array and remove from original array. Consider it [`arra
 
 --------
 **Parameters**
-name	type	def_value	desc
-array	array		source array; **array is passed by reference**
+name	type	def_value	desc	by_ref
+array	array		source array;	TRUE
 key	string		item key to be extracted
 
 --------
@@ -26,14 +26,18 @@ $data = array(
 	...
 );
 $result = array_extract( $data, 'user12' );
+```
 
-// $result = array( 'user12' -> array( ... ) );
-// $data = array(
-// 	'user1' => array( ... ),
-// 	'user2' => array( ... ),
-// 	...
-// 	'user11' => array( ... ),
-// 	'user13' => array( ... ),
-// 	...
-// );
+So the variables values are:
+```php
+$result = array( 'user12' -> array( ... ) );
+$data = array(
+	'user1' => array( ... ),
+	'user2' => array( ... ),
+	...
+	'user11' => array( ... ),
+	// 'user12' is removed from original array
+	'user13' => array( ... ),
+	...
+);
 ```

@@ -18,4 +18,7 @@ FALSE	otherwise
 ```php
 if( ! time_started() )
 	echo "Application period is not yet started.";
+else
+    // show form
+    ...
 ```

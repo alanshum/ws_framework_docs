@@ -50,9 +50,9 @@ $pairs = array(
 );
 
 /**
- * ******************************************
+ * ****************************************
  * Do not edit beyond this line if you are not sure
- * ******************************************
+ * ****************************************
  */
 $usage_note = "Usage Note: <br>
 copy and rename this file with the same file name as the markdown file. <br>
@@ -96,14 +96,12 @@ if (($handle = @fopen($filename . '_full.md', 'a')) !== false)
 // convert to html
 require_once 'Michelf/MarkdownExtra.inc.php';
 
-// php5 - choose one to use
+// for php5 - choose one to use
 use \Michelf\MarkdownExtra;
 $html = MarkdownExtra::defaultTransform($text);
 
-// php4 - choose one to use
-
+// for php4 - choose one to use
 // include_once "incl/markdown.php";
-
 // $html = Markdown($text);
 
 // get full h1 tag
@@ -112,6 +110,50 @@ $h1   = $h1[0][0];
 $html = str_replace($h1, '', $html); // remove original h1 in content area; and then later add to sidebar area
 
 $title = substr($h1, 4, strlen($h1) - 9);
+
+
+
+// prepare index
+preg_match_all('/<h5*[^>]*>.*?<\/h5>/', $html, $h5);
+$h5 = $h5[0];
+sort($h5);
+$h5group = array();     // init
+foreach( $h5 as $i => $row )
+{
+    if( ! stristr( $row, '()' ) )
+    {
+        unset( $h5[$i] );
+        continue;
+    }
+    $name = strip_tags($row);
+    // $url = str_replace('()','',$name);
+    // $h5[$i] = '<a href="#' . $url . '" title="Jump to ' . $name . '">' . $name . '</a>';
+    $groupname = substr( $name , 0 , 1 );
+    $h5group[$groupname][] = $name;
+}
+
+$h5 = array() ;      // reset
+
+foreach( $h5group as $letter => $items)
+{
+    $h5[] = '<div class="apigroup"><h6>' . $letter . "</h6>\n\t<ul>";
+    foreach( $items  as $item )
+    {
+        $url = str_replace('()','',$item);
+        $h5[] = '<li><a href="#' . $url . '" title="Jump to ' . $item . '">' . $item . '</a></li>';
+    }
+    $h5[] = "\t</ul>\n</div>";
+}
+
+// styling
+$h5 = implode( "\n" , $h5 );
+$h5 = '<div class="apiindex">' . $h5 . '</div>';
+$pairs[] = array(
+    'search'  => '{index}',
+    'replace' => $h5,
+);
+
+
 
 // add proper header/footer stuff
 $html = '
@@ -131,13 +173,13 @@ $html = '
 <body id="top"><a href="#top" class="top" title="Back to Top">^</a>
 <div class="container">
     <div class="row">
-        <div class="col-md-4" id="menu">
+        <div class="col-md-4" id="left-menu">
             <div id="sidebar">' . $h1 . '
                 <p></p>
                 <nav class="anchorific"></nav>
             </div>
         </div>
-        <div class="col-md-8" id="main">
+        <div class="col-md-8" id="main-content">
 ' . $html . '
 </div><!-- / container -->
 </div><!-- / row-->
@@ -498,7 +540,7 @@ function prep_fx($fx_name, $content, $delimiter = "\n")
 {
     $content = array_trim(explode($delimiter, $content));
 
-    // init for order
+    // init for display order
     $sections = array(
         'Syntax'        => '',
         'Description'   => '',
@@ -506,6 +548,7 @@ function prep_fx($fx_name, $content, $delimiter = "\n")
         'Properties'    => '',
         'Return Values' => '',
         'Examples'      => '',
+        'Changlog'      => '',
     );
 
     foreach ($content as $row)
@@ -541,6 +584,10 @@ function prep_fx($fx_name, $content, $delimiter = "\n")
                 if ($param['name'] != '...')
                 {
                     $param_name = '$' . $param['name'];
+                    if( isset($param['by_ref']) && $param['by_ref'] )
+                    {
+                        $param_name = '&' . $param_name;
+                    }
                 }
                 else
                 {
@@ -596,9 +643,11 @@ function prep_fx($fx_name, $content, $delimiter = "\n")
             {
                 $type = ucwords($rval['type']);
 
-                $val = empty($rval['desc']) ? '' : ' - ' . $rval['desc'];
+                $rval['desc'] = str_replace('of ', '', $rval['desc']); // I'm just lazy re-editing
 
-                $r[] = "- *{$type}*{$val}";
+                $val = empty($rval['desc']) ? '' : ': ' . $rval['desc'];
+
+                $r[] = "- **{$type}**{$val}";
             }
 
             $sections['Return Values'] = implode("\n", $r);
