@@ -87,7 +87,7 @@ $text = '# ' . $title . "\n" . $text;
 // save to a readable markdown
 clearstatcache();
 
-if (($handle = @fopen($filename . '_full.md', 'a')) !== false)
+if (($handle = @fopen($filename . '_full.md', 'w+')) !== false)
 {
     $fout = fwrite($handle, $text . "\n");
     fclose($handle);
