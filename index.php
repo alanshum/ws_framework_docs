@@ -174,7 +174,7 @@ $html = '
 <div class="container">
     <div class="row">
         <div class="col-md-4" id="left-menu">
-            <div id="sidebar">' . $h1 . '
+            <div id="menubar">' . $h1 . '
                 <p></p>
                 <nav class="anchorific"></nav>
             </div>
@@ -191,17 +191,17 @@ $html = '
 
 // init
 if ($(window).width() >= 992) {
-    $('#sidebar').sticky({topSpacing: 0});
+    $('#menubar').sticky({topSpacing: 0});
 }
 
 // if sized..
 $(window).resize( function() {
     if ($(window).width() >= 992) {
-        $('#sidebar').sticky({topSpacing: 0}).sticky('update');
+        $('#menubar').sticky({topSpacing: 0}).sticky('update');
     }
     else
     {
-        $('#sidebar').unstick();
+        $('#menubar').unstick();
     }
 });</script>
 <script>$('.container').anchorific();</script>
