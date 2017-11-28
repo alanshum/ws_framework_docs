@@ -48,8 +48,8 @@ echo html( 'div' , $attr , 'Sample Text' );
 You can also wrap html() into another html() just like a chain:
 ```php
 $attr = array( 'href' => 'www.example.com', 'title' => 'Hover Text');
-echo html( 'div' , '' , 
-		html( 'h4' , '' , 
+echo html( 'div' , '' ,
+		html( 'h4' , '' ,
 			html( 'a' , $attr, 'A link in a h4 in a div')
 		)
 	);
@@ -59,7 +59,9 @@ The above can also be transformed in the following syntax:
 ```php
 $attr = array( 'href' => 'www.example.com', 'title' => 'Hover Text');
 echo html( ['a','h4','div'] , [$attr] , 'A link in a h4 in a div' );
-// for $attributes part (2nd parameter), we can omit those do not have any attributes. The function just check for the same array index to use.
+// consider it "inner" element goes first in the array
+
+// for $attributes part (2nd parameter), we can omit those do not have any attributes. The function just check for the same array index (key) to use.
 ```
 
 This example prints:
@@ -69,4 +71,5 @@ This example prints:
 
 --------
 **Changelog**
+
 2017.10.25: Added the ability to call html() multiple times in a row directly

@@ -1,5 +1,5 @@
 **Description**
-Print argument using `var_dump()` for unlimited number of arguments. As opposed to `printr()`, no styling is added in favor of viewing source.
+Print argument using `var_dump()` for unlimited number of arguments. As opposed to `printr()`, no styling is added in favor of xdebug.
 
 --------
 **Parameters**
