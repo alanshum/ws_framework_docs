@@ -16,12 +16,12 @@ void
 
 ```php
 echob( 'a','b' );
-// prints: 
+
+// prints:
 // a
 // b
 ```
 
 --------
 **Changelog**
-- 2016-02-15
-	-  now accepts array of strings (previously only strings)
+2016-02-15: now accepts array of strings (previously only strings)

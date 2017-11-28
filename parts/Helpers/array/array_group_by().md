@@ -1,5 +1,7 @@
 **Description**
-Group array data by one of the keys and make it one more dimension deeper
+Group array data by one of the keys and make it one more dimension deeper.
+
+If the key to group does not exist, the record will be grouped to key `''` (blank).
 
 --------
 **Parameters**
@@ -52,3 +54,8 @@ print_r( $data );
 // )
 ```
 In the example above, if $keep_array_item is set to FALSE, the last level array items with key "group" will be removed.
+
+--------
+**Changelog**
+2017.11.03: Fixed an issue with group by key does not exist. Php errors won't be shown anymore if they key does not exist.
+
