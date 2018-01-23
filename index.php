@@ -2,17 +2,6 @@
 /**
  * Auto Converter and Prettifier for Markdown to HTML
  */
-// ------ Do not edit ------
-$usage_note = "Usage Note: <br>
-copy and rename this file with the same file name as the markdown file. <br>
-E.g. if the html file is 'example.html', then copy and rename this file as 'example.php'. <br>
-Then open this php file in browser. <br>
-And you can also edit to string replaces so that you can hide some stuff in the md file which is only useful in web version; <br>
-and/or fix some strange behaviour which is resulted from the md converter library.<br>
-";
-define("DS", DIRECTORY_SEPARATOR);
-
-// ------ Do not edit above ------
 
 // this is the page title , will be shown at the top <h1> and <head><title>
 $title = 'WS Framework Docs';
@@ -54,6 +43,9 @@ $pairs = array(
  * Do not edit beyond this line if you are not sure
  * ****************************************
  */
+
+define("DS", DIRECTORY_SEPARATOR);
+
 $usage_note = "Usage Note: <br>
 copy and rename this file with the same file name as the markdown file. <br>
 E.g. if the html file is 'example.md', then copy and rename this file as 'example.php'. <br>
@@ -76,7 +68,7 @@ $basepath = $_SERVER['DOCUMENT_ROOT'] . DS . implode(DS, array_filter($self)) . 
 $file_content = @file_get_contents($file) or die($usage_note);
 
 $toc  = toc2array($file_content);
-$text = incl_files($toc, $basepath . 'parts/');
+$text = incl_md_files($toc, $basepath . 'parts/');
 $text = array_to_1d($text);
 
 $text = implode("\n", $text) . "\n";
@@ -279,7 +271,7 @@ function vardump()
  * @param  string|bool  $row_key       =TRUE ; set column name to be used as first level array key names instead of numbers; if TRUE: will search for 'id' column
  * @param  string       $delimiter     ="\t" ; column separator
  * @param  bool         $convert_space =TRUE; convert 4 consecutive spaces to tabs
- * @return multitype:
+ * @return array
  */
 function tsv2array($data, $has_header = true, $row_key = true, $delimiter = "\t", $convert_spaces = true)
 {
@@ -322,7 +314,7 @@ function tsv2array($data, $has_header = true, $row_key = true, $delimiter = "\t"
 
 //-- 1st level array key (i.e. key of each row)
 
-// error prone mechanism: 'id' would be most common and unique column
+// opinionated error prone mechanism: 'id' would be most common and unique column
     if ($row_key === true)
     {
         $row_key = 'id';
@@ -343,9 +335,7 @@ function tsv2array($data, $has_header = true, $row_key = true, $delimiter = "\t"
                 // ugly but error prone mechanism for non-unique values
                 $new2[$row[$row_key] . $i] = $row;
             }
-
         }
-
     }
     else
     {
@@ -356,7 +346,7 @@ function tsv2array($data, $has_header = true, $row_key = true, $delimiter = "\t"
 }
 
 /**
- * Making first row of array to array keys
+ * Making first element array (2nd level item) to array keys (of 1st level array)
  * @param  array   $array
  * @return array
  */
@@ -536,7 +526,7 @@ function toc2array($list, $indentation = "\t")
  * @param  string $delimiter what delimits the separation of differnt sections
  * @return string complete text in md
  */
-function prep_fx($fx_name, $content, $delimiter = "\n")
+function prep_fx_docs($fx_name, $content, $delimiter = "\n")
 {
     $content = array_trim(explode($delimiter, $content));
 
@@ -643,7 +633,7 @@ function prep_fx($fx_name, $content, $delimiter = "\n")
             {
                 $type = ucwords($rval['type']);
 
-                $rval['desc'] = str_replace('of ', '', $rval['desc']); // I'm just lazy re-editing
+                $rval['desc'] = str_replace('of ', '', $rval['desc']);      // I'm just lazy re-editing old docs where there are plenty of "of"
 
                 $val = empty($rval['desc']) ? '' : ': ' . $rval['desc'];
 
@@ -689,10 +679,9 @@ function prep_fx($fx_name, $content, $delimiter = "\n")
  * @param  [type] $basepath       [description]
  * @return [type] [description]
  */
-function incl_files($arr, $basepath)
+function incl_md_files($arr, $basepath)
 {
-    $ret = array();
-// init
+    $ret = array();     // init
 
     foreach ($arr as $i => $row)
     {
@@ -708,7 +697,7 @@ function incl_files($arr, $basepath)
                 $fx_name = array_pop($fx_name);
                 $fx_name = substr($fx_name, 0, strlen($fx_name) - 2);
 
-                $content = prep_fx($fx_name, $content, '--------');
+                $content = prep_fx_docs($fx_name, $content, '--------');
                 $content = implode("\n", $content);
             }
 
@@ -732,7 +721,7 @@ function incl_files($arr, $basepath)
         {
             // there are other children and so put up the heading first and include the parts.
             $ret[] = char('#', $row['attributes']['depth'] + 2) . ' ' . $i;
-            $ret[] = incl_files($row, $basepath);
+            $ret[] = incl_md_files($row, $basepath);
 
             // add more hr for h3, but no need more if no h4 ( but add if last h3 with no h4 )
             if ($row['attributes']['depth'] == 1)
