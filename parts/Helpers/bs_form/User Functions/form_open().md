@@ -25,6 +25,8 @@ String	of HTML code
 echo form_open();		// a simple open tag that points to itself as handler
 
 echo form_open('submit.php','horizontal','form1','capture',TRUE,'disabled');
-// prints:
-// <form action="submit.php" class="form-horizontal capture" id="form1" enctype="multipart/form-data" disabled>
+```
+The 2nd example prints:
+```html
+<form role="form" action="submit.php" method="post" class="form-horizontal capture" id="form1" enctype="multipart/form-data"  disabled>
 ```

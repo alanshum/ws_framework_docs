@@ -8,6 +8,7 @@ Note: This is not an intelligent function. You must give instructions if that is
 name	type	def_value	desc
 element	string/array		Element name to be printed. E.g. a, form, input, etc.<br> If this is an array, the `html()` will be run repeatedly for the tags specified
 attributes	array	''	Any attributes to be printed inside the open tag. Sub array items can also be array. For details please refer to [`_print_attributes()`](#_print_attributes). You may also specify `''` (blank) for `$attributes` if no attributes to add if you need close comment (the param below).<br> If $element is an array, you must have respective number of array items for the matching element, otherwise no attributes will be printed.
+mid_text	string	FALSE	any text between open and close tag. FALSE for self-closing elements. EMPTY string `''` if not self-closing elements but no text to put.
 html_close_comment	bool	FALSE	If *TRUE*, add a html comment after close tag to make view source better. Text to add is from id and class attributes (see examples). No effect for self-closing elements.
 
 --------

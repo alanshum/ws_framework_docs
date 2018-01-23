@@ -24,26 +24,29 @@ $data = array(
 	);
 
 printr( array_header_to_keys($data) );
+```
 
-// prints:
-// Array
-// (
-//     [0] => Array
-//         (
-//             [key1] => value1A
-//             [key2] => value2A
-//             [key3] => value3A
-//         )
-//     [1] => Array
-//         (
-//             [key1] => value1B
-//             [key2] => value2B
-//             [key3] => value3B
-//         )
-// )
+prints:
+
+```php
+Array
+(
+    [0] => Array
+        (
+            [key1] => value1A
+            [key2] => value2A
+            [key3] => value3A
+        )
+    [1] => Array
+        (
+            [key1] => value1B
+            [key2] => value2B
+            [key3] => value3B
+        )
+)
 ```
 
 --------
 **Changelog**
 - 2016-02-16
-	- Fixed a bug that if the item has no value, the value will becomes *NULL*. Now changes to *''* (blank) string
+	- Fixed a bug that if the item has no value, the value will become `NULL`. Now changes to `''` (blank) string
