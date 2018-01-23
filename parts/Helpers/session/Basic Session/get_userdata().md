@@ -14,7 +14,7 @@ name	type	def_value	desc
 --------
 **Return Values**
 type	desc
-Array/String	Vaues of user session data
+Array/String	user session data values
 NULL	if the key is not found
 
 --------

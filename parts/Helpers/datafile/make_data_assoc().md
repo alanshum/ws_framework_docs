@@ -15,13 +15,44 @@ name	type	def_value	desc
 --------
 **Return Values**
 type	desc
-Array - associative array
+Array	associative array
+FALSE	if key_field is not found
 
 --------
 **Examples**
 
 ```php
-$data = make_data_assoc( open_datafile( ... ) , 'user_id' );
+$data = open_datafile( ... );
+
+printr($data);
+// $data:
+Array(
+	[0] => Array(
+		'uniqid' => "id001" ,
+		'values' => ... ,
+	)
+	[1] => Array(
+		'uniqid' => "id002" ,
+		'values' => ... ,
+	)
+)
+
+
+$data = make_data_assoc( $data , 'user_id' );
+
+printr($data);
+// $data is now:
+// note the change of first level element keys
+Array(
+	[id001] => Array(
+		'uniqid' => "id001" ,
+		'values' => ... ,
+	)
+	[id002] => Array(
+		'uniqid' => "id002" ,
+		'values' => ... ,
+	)
+)
 ```
 
 --------

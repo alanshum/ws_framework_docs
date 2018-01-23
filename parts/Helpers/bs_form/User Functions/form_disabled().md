@@ -1,5 +1,6 @@
 **Description**
 This function has two uses (see examples):
+
 1. Making all form elements in disabled state (or not).
 	- Note: This is a global switch. Meaning that you can change this settings once and change for all fields.
 	- Default disabled state is FALSE. (i.e. you can completely ignore this function if you do not need this.)
@@ -28,5 +29,5 @@ if( time_started() AND ! time_ended() )
 
 --------
 **Changelog**
-- Added on: 2016-02-01
+- 2016-02-01: new
 
