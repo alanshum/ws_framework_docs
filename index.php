@@ -166,7 +166,7 @@ $html = '
 <div class="container">
     <div class="row">
         <div class="col-md-4" id="left-menu">
-            <div id="menubar">' . $h1 . '
+            <div id="menubar"><a href="#top">' . $h1 . '</a>
                 <p></p>
                 <nav class="anchorific"></nav>
             </div>
