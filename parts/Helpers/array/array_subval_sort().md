@@ -18,10 +18,14 @@ Array	sorted
 **Examples**
 
 ```php
-$data = array( 
-	array( 'user_id' => '132' ), 
+$data = array(
+	array( 'user_id' => '132' ),
 	array( 'user_id' => '66'),
 	...
 );
-$data = array_order_by( $data, 'user_id' , SORT_ASC );
+$data = array_subval_sort( $data, 'user_id' , SORT_ASC );
 ```
+
+--------
+**Changelog**
+2018.02.08: Renamed from array_order_by (which remained as alias) for clarity
