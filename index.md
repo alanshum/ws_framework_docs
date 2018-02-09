@@ -129,7 +129,7 @@ Helpers
 			6. placeholder
 			7. options
 				a. select options
-				b. serialized  json encoded array
+				b. serialized or json encoded array
 				c. value-desc pair
 			8. extra
 			9. value
