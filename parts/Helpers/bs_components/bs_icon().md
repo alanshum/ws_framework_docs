@@ -19,6 +19,18 @@ String	of HTML code
 
 ```php
 echo bs_icon( 'remove', 'danger' );
+
 echo bs_icon( 'close' );
+
 echo bs_icon( 'caret' );
+```
+
+prints:
+
+```html
+<span aria-hidden="true" class="glyphicon glyphicon-remove text-danger"></span>
+
+<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+<span class="caret"></span>
 ```
