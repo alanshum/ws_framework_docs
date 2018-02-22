@@ -5,7 +5,7 @@ Add a JavaScript block in the application, so as to load after page content (by 
 **Parameters**
 name	type	def_value	desc
 script	string		Script block to add
-is_link	bool	FALSE	Specify *TRUE* if `$script` specifies a link to script file instead of codes
+is_link	bool	FALSE	Specify *TRUE* if `$script` specifies a link to script file instead of codes. The link will be passed to [`site_url()`](#site_url) first.
 
 
 --------
