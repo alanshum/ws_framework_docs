@@ -50,10 +50,6 @@ Core
 			set_page_title()
 			incl()
 Main
-	Development Functions
-			echob()
-			printr()
-			vardump()
 	Checking Functions
 			_required()
 			_default()
@@ -173,6 +169,14 @@ Helpers
 			dataset()
 			backup_dataset()
 			make_data_assoc()
+	debug
+			echob()
+			rr()
+			rrr()
+			dd()
+			ddd()
+			pflag()
+			profile_print()
 	db
 		Database Configuration
 		Connecting to Database

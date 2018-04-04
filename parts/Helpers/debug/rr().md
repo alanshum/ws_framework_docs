@@ -15,5 +15,11 @@ void
 **Examples**
 
 ```php
-printr($_SERVER, $P);
+rr($_SERVER, $P);
 ```
+
+--------
+**Changelog**
+
+2018.04.04: renamed from `printr()`
+2017.11.28: newly added

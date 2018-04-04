@@ -1,5 +1,5 @@
 **Description**
-Print arguments using `print_r()` for unlimited number of arguments with proper styles (`<pre>`). Basically this is just an alias to [`printr()`](#printr).
+Print arguments using `var_dump()` for unlimited number of arguments. As opposed to [`rr()`](#rr), no styling is added in favor of xdebug.
 
 --------
 **Parameters**
@@ -15,10 +15,11 @@ void
 **Examples**
 
 ```php
-rr($_SERVER, $P);
+dd( $array1, $object2 );
 ```
 
 --------
 **Changelog**
 
+2018.04.04: renamed from `vardump()`
 2017.11.28: newly added
