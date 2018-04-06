@@ -21,5 +21,4 @@ dd( $array1, $object2 );
 --------
 **Changelog**
 
-2018.04.04: renamed from `vardump()`
-2017.11.28: newly added
+2017.11.28: renamed from `vardump()`

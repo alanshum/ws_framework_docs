@@ -1,5 +1,5 @@
 **Description**
-require a php file and return the result after the code is run. That is, normally we will get some html code or text as how your required file design. Sometimes you may not want to include the php file directly for various reasons and only need to results.
+require a php file and return the result after the code is run. That is, normally we will get some html code or text as how your required file design. Sometimes you may not want to include the php file directly for various reasons and only need the generated results.
 
 --------
 **Parameters**

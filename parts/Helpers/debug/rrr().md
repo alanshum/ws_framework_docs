@@ -19,3 +19,8 @@ void
 ```php
 rrr( $array1, $object2 );		// kills the script after printing $object2
 ```
+
+--------
+**Changelog**
+
+2017.11.28: newly added

@@ -21,5 +21,4 @@ rr($_SERVER, $P);
 --------
 **Changelog**
 
-2018.04.04: renamed from `printr()`
-2017.11.28: newly added
+2017.11.28: renamed from `printr()`
